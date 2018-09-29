@@ -15,12 +15,9 @@ var app_uuid, inputData;
 app.post("/post", (req, res) => {
    req.on("data", (data) => {
      inputData = JSON.parse(data);
-   });
-   req.on("end", () => {
      app_uuid= inputData.UUID;
-     console.log("UUID : "+inputData.UUID);
+     //console.log("UUID : "+inputData.UUID);
    });
-   res.end();
 });
 
 app.get("/users", (req, res) => {
